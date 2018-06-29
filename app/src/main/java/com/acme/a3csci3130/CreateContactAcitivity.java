@@ -6,6 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+/**
+ * Class that creates a contact activity with at most five fields:
+ * Business Number (Required), Name (Required), Primary Business (Required),
+ * Address (Can be empty), Province (Can be empty).
+ */
+
 public class CreateContactAcitivity extends Activity {
 
     private Button submitButton;
@@ -27,6 +33,10 @@ public class CreateContactAcitivity extends Activity {
         provinceField = (EditText) findViewById(R.id.province);
     }
 
+    /**
+     * Get all texts from edit texts and create a contact variable to
+     * pass to firebase when submitInfo button has been clicked.
+     */
     public void submitInfoButton(View v) {
         //each entry needs a unique ID
         String personID = appState.firebaseReference.push().getKey();

@@ -5,6 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+/**
+ * Class that updates or deletes a contact activity with at most five fields:
+ * Business Number (Required), Name (Required), Primary Business (Required),
+ * Address (Can be empty), Province (Can be empty).
+ */
+
 public class DetailViewActivity extends Activity {
 
     private EditText businessNumberField, nameField, primaryBusinessField, addressField, provinceField;
@@ -33,6 +39,10 @@ public class DetailViewActivity extends Activity {
         }
     }
 
+    /**
+     * Get all texts from edit texts after updating data and create a contact
+     * variable to pass to firebase when submitInfo button has been clicked.
+     */
     public void updateContact(View v){
         String uid = receivedPersonInfo.uid;
         String businessNumber = businessNumberField.getText().toString();
@@ -48,6 +58,9 @@ public class DetailViewActivity extends Activity {
 
     }
 
+    /**
+     * Delete a specific contact activity.
+     */
     public void eraseContact(View v)
     {
         appState.firebaseReference.child(receivedPersonInfo.uid).removeValue();

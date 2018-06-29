@@ -11,6 +11,11 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * Class that creates connection between android studio and firebase and
+ * sets start of activities of create contact and display detail.
+ */
+
 public class MainActivity extends Activity {
 
 
@@ -52,12 +57,18 @@ public class MainActivity extends Activity {
         });
     }
 
+    /**
+     * Start activity of creating a contact variable
+     */
     public void createContactButton(View v)
     {
         Intent intent=new Intent(this, CreateContactAcitivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Start activity of displaying the detail of a contact variable
+     */
     private void showDetailView(Contact person)
     {
         Intent intent = new Intent(this, DetailViewActivity.class);

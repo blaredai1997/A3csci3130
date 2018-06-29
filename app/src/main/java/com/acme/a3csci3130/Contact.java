@@ -9,11 +9,13 @@ import java.util.Map;
 
 /**
  * Class that defines how the data will be stored in the
- * Firebase databse. This is converted to a JSON format
+ * Firebase databse. This is converted to a JSON format.
  */
 
 public class Contact implements Serializable {
-
+    /**
+     * The fields of a contact.
+     */
     public  String uid;
     public  String businessNumber;
     public  String name;
